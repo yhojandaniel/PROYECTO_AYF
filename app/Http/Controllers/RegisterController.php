@@ -15,10 +15,13 @@ class RegisterController extends Controller
 
     // Procesa la solicitud de registro
     public function register(RegisterRequest $request){
+        // Se crea al usuario
         $user = $this->create($request->validated());
+        // Una vez creado el usuario, retornamos a Login para que el usuario acceda a su cuenta
         return redirect('/login')->with('success', 'Cuenta creada correctamente!');
     }
 
+    // Envia los siguientes datos a la base de datos para registrar al usuario
     protected function create(array $data){
         return User::create([
             'name' => $data['name'],

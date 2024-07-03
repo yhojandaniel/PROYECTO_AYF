@@ -4,6 +4,7 @@
     <div class="container">
         <h1>Accede a tu cuenta!</h1>
         <div>
+            {{-- Si hay alertas, que se muestren dinámicamente --}}
             @if (session()->has('message'))
             <div class="alert alert-success" role="alert">
                 {{ session('message') }}
@@ -26,6 +27,7 @@
                 <button type="submit" class="btn btn-primary">Ingresar</button>
             </form>
 
+        {{-- Si hay errores, que se muestren dinámicamente --}}
         @if ($errors->any())
         <div class="alert alert-danger">
             <ul>

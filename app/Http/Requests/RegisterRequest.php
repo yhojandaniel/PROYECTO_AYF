@@ -20,8 +20,8 @@ class RegisterRequest extends FormRequest
      *
      * @return array
      */
+    // Datos que se pedira al usuario
     public function rules(){
-        // Datos que se pedira al usuario
         return [
             'name' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',

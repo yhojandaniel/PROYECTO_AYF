@@ -15,7 +15,7 @@ class LoginController extends Controller
 
     // Procesar solicitud de login
     public function login(LoginRequest $request){
-        // Verifica las credenciales que usa Laravel
+        // Verifica las credenciales del usuario
         $credentials = $request->getCredentials();
 
         // Si no se valida, retornar al login con errores

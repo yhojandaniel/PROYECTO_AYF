@@ -20,14 +20,20 @@ use App\Http\Controllers\HomeController;
 
 // Rutas de la pagina web
 
+// Cargar html de Home
 Route::get('/', [HomeController::class, 'showHome']);
 
+// Cargar html de Registro
 Route::get('/register', [RegisterController::class, 'showRegister']);
 
+// Registrar usuario en la base de datos
 Route::post('/register', [RegisterController::class , 'register']);
 
+// Cargar html de Login
 Route::get('/login', [LoginController::class, 'showLogin']);
 
+// Loguear al usuario con verificacion en la base de datos
 Route::post('/login', [LoginController::class , 'login']);
 
+// Quitar todas las sesiones activas
 Route::post('/logout', [LogoutController::class , 'logout']);

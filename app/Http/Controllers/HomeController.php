@@ -10,15 +10,15 @@ class HomeController extends Controller
     // Mostrar inicio
     public function showHome(){
 
-        // Si no existe usuario logueado, solo retorna al home
+        // Si no hay nigun usuario, mostrar el inicio como invitado
         if(is_null(Auth::user())){
             return view('layouts.home');
         }
 
-        //
-        $name_array = Auth::user()->name;
-        $text = explode(" ", $name_array);
-        $name = $text[0];
-        return view('layouts.home', compact('name'));
+        // Caso contrario
+        $name_array = Auth::user()->name;             //Obtenemos datos del usuario
+        $text = explode(" ", $name_array);            //Separamos el array
+        $name = $text[0];                             //Obtenemos el nombre
+        return view('layouts.home', compact('name')); //Cargamos el inicio con la variable
     }
 }

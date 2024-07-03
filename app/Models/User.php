@@ -46,10 +46,10 @@ class User extends Authenticatable
      * @var array<string, string>
      */
 
-     // Campos que se rellenan automaticamente
+     // Campos que se expresan verbalmente para evitar que Laravel confunda los tipos de datos
     protected $casts = [
-        'email_verified_at' => 'datetime',
-        'rol' => 'string',
+        'email_verified_at' => 'datetime', //Que las fechas sean tratadas como fechas
+        'rol' => 'string',                 //Que el campo de rol sea tratado como string (ENUM en la base de datos)
     ];
 
     // Cifrado de contraseña con la libreria Bcrypt

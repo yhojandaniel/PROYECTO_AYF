@@ -4,6 +4,7 @@
     <div class="container">
         <h1>¿Eres nuevo? ¡Registrate!</h1>
         <div>
+            {{-- Si hay alertas, que se muestren dinámicamente --}}
         @if (session()->has('message'))
             <div class="alert alert-success" role="alert">
                 {{ session('message') }}
@@ -11,6 +12,7 @@
         @endif
 
         <form method="POST" action="/register">
+            {{-- Token --}}
             @csrf
             <div class="form-group p-2">
                 <label for="name">Nombres</label>
@@ -53,6 +55,7 @@
                 <button type="submit" class="btn btn-warning">¿Tienes una cuenta?</button>
         </form>
 
+        {{-- Si hay errores, que se muestren dinámicamente --}}
         @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
